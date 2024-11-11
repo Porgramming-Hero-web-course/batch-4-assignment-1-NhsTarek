@@ -12,7 +12,7 @@
 
   type Shape = Circle | Rectangle;
 
-  function calculateShapeArea(shape: Shape): number {
+  function calculateShapeArea(shape: Shape): number | undefined {
     let area: number;
 
     if (shape.shape === 'circle') {
@@ -21,6 +21,8 @@
     } else if (shape.shape === 'rectangle') {
       const area = shape.width * shape.height;
       return parseFloat(area.toFixed(2));
+    } else {
+      return undefined;
     }
   }
 }
